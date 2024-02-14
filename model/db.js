@@ -3,7 +3,10 @@ import Executor from 'sqlexecutor';
 import dotenv from 'dotenv';
 dotenv.config()
 const executor = new Executor({
-    database: process.env.DATABASE_SECRET
+    host:process.env.HOST,
+    user:process.env.USER,
+    password:process.env.PASSWORD,
+    database: process.env.DATABASE
 }).call
 
 
