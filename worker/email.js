@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
 
 const sendMessage = async (email,sender,recipient,message, link) => {
   const mailOptions = {
-    from: '"Heydata Mobile Limited" <hello@heydata.com.ng>', 
+    from: '"HeyTransfer Limited" <hello@heydata.com.ng>', 
     to: recipient,
     subject: `File Transfer from ${email} `,
     html: `
@@ -35,12 +35,12 @@ const sendMessage = async (email,sender,recipient,message, link) => {
     <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
       <div class="email-container" style="max-width: 600px; margin: 0 auto; background-color: #000; padding: 20px; border-radius: 10px; color: #fff;">
         <div class="header" style="text-align: center; color: #ffffff;">
-          <h1>${sender || email} sent you a file!</h1>
-          <p style="font-size: 16px; line-height: 1.6;">${message || ""}.</p>
+          <h4>${sender || email} sent you a file! You can download it using the link below</h4>
+          <p style="font-size: 12px; line-height: 1.6;">${message || ""}.</p>
         </div>
         
-        <div class="otp-container" style="background-color: #0000ff; border-radius: 15px; width: 90px; height: 40px; text-align: center; justify-content: center; margin: 20px auto;">
-          <strong class="otp" style="font-size: 22px; color: #fff; line-height: 40px;">${link}</strong>
+        <div class="otp-container" style="background-color: #fff; border-radius: 15px; width: auto; height: 40px; text-align: center; justify-content: center; margin: 20px auto;">
+          <strong class="otp" style="font-size: 13px; color: #fff; line-height: 40px;">${link}</strong>
         </div>
     
         <hr>
